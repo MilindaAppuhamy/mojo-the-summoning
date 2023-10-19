@@ -1,10 +1,16 @@
 const { db, DataTypes } = require("../db/config");
 
-const Attack = db.define("Attack", {
-  title: DataTypes.STRING,
-  mojoCost: DataTypes.INTEGER,
-  staminaCost: DataTypes.INTEGER,
-});
+const Attack = db.define(
+  "Attack",
+  {
+    title: DataTypes.STRING,
+    mojoCost: DataTypes.INTEGER,
+    staminaCost: DataTypes.INTEGER,
+  },
+  {
+    freezeTableName: true,
+  }
+);
 
 module.exports = {
   Attack,
